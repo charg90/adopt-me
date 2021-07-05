@@ -1,0 +1,32 @@
+<div>
+  <div class="container-fluid" style="height:100vh">
+      
+    <table class="table">
+        <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Direccion</th>
+            <th>mail</th>
+            <th>foto</th>
+        </tr>
+        {{#each voluntarios}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{nombre}}</td>
+            <td>{{apellido}}</td>
+            <td>{{direccion}}</td>
+            <td>{{mail}}</td>
+            <td><img src="/images/{{uuid}}" alt = "no hay imagen" style = "height :40px"></td>
+            <td><a href="/admin/voluntarios/update/{{id}}">editar</a></td>
+            <td><a href="/admin/voluntarios/delete/{{id}}">eliminar</a></td>
+
+        </tr>
+            {{/each}}
+            
+    </table>
+    <a href="/admin/voluntarios/create" class="btn btn-block button btn-primary">agregar</a>
+      </div>
+    </div>
+  </div>
+</div>

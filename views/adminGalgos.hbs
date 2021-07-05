@@ -1,0 +1,31 @@
+<div>
+  <div class="container-fluid" style="height:100vh">
+      
+    <table class="table">
+        <tr>
+            <th>#</th>
+            <th>nombre</th>
+            <th>edad</th>
+            <th>color</th>
+            <th>organizacion</th>
+            <th>-</th>
+        </tr>
+        {{#each galgos}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{nombre}}</td>
+            <td>{{edad}}</td>
+            <td>{{color}}</td>
+            <td>{{organizacionNombre}}</td>
+            <td><a href="/admin/galgos/update/{{id}}">editar</a></td>
+            <td><a href="/admin/galgos/delete/{{id}}">eliminar</a></td>
+
+        </tr>
+            {{/each}}
+            
+    </table>
+    <a href="/admin/galgos/create" class="btn btn-block button btn-primary">agregar</a>
+      </div>
+    </div>
+  </div>
+</div>

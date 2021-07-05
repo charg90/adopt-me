@@ -1,0 +1,60 @@
+<div class="container-fluid">
+  <div
+    class="row justify-content-center align-items-center"
+    style="height : 100vh"
+  >
+
+    <form method="POST" action="/registro/create">
+      <div class="form-group">
+        <label for="Username">Username:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          name="username"
+          placeholder="username"
+        />
+      </div>
+      <div class="form-group">
+        <label for="pass">Pass:</label>
+        <input
+          type="password"
+          class="form-control"
+          id="pass"
+          name="pass"
+          placeholder="password"
+        />
+      </div>
+      <div class="form-group">
+        <label for="telefono">Telefono:</label>
+        <input
+          type="number"
+          class="form-control"
+          id="telefono"
+          name="telefono"
+          placeholder="telefono"
+        />
+      </div>
+      <div class="form-group">
+        <label for="mail">Email:</label>
+        <input
+          type="email"
+          class="form-control"
+          id="mail"
+          name="mail"
+          placeholder="name@example.com"
+        />
+        <div class="d-grid gap-2">
+          <button
+            type="submit"
+            class="btn btn-block btn-primary mt-2"
+          >registrate</button>
+
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>

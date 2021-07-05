@@ -1,0 +1,76 @@
+<div class="container-fluid">
+  <div
+    class="row justify-content-center align-items-center"
+    style="height : 100vh"
+  >
+
+    <form method="POST" action="/admin/galgos/update/{{galgo.id}}">
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nombre"
+          name="nombre"
+          placeholder="nombre"
+          value="{{galgo.nombre}}"
+        />
+      </div>
+      <div class="form-group">
+        <label for="edad">Edad:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="edad"
+          name="edad"
+          placeholder="edad"
+          value="{{galgo.edad}}"
+        />
+      </div>
+      <div class="form-group">
+        <label for="descripcion">Descripcion:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="descripcion"
+          name="descripcion"
+          placeholder="descripcion"
+          value="{{galgo.descripcion}}"
+        />
+      </div>
+      <div class="form-group">
+        <label for="color">color:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="color"
+          name="color"
+          placeholder="color"
+          value="{{galgo.color}}"
+        />
+        <select
+          name="id_organizacion"
+          id="id_organizacion"
+          class="form-select mt-3"
+        >
+
+          {{#each organizacion}}
+            <option value="{{id}}">{{nombre}}</option>
+          {{/each}}
+
+        </select>
+        <div class="d-grid gap-2">
+          <button
+            type="submit"
+            class="btn btn-block btn-primary mt-2"
+          >editar</button>
+
+        </div>
+
+      </div>
+
+    </form>
+
+  </div>
+
+</div>

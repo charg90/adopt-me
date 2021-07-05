@@ -1,0 +1,28 @@
+<div>
+  <div class="container-fluid" style="height:100vh">
+    <table class="table">
+        <tr>
+            <th>#</th>
+            <th>nombre</th>
+            <th>edad</th>
+            <th>color</th>
+            <th>organizacion</th>
+            <th>-</th>
+        </tr>
+        {{#each galgos}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{nombre}}</td>
+            <td>{{edad}}</td>
+            <td>{{color}}</td>
+            <td>{{organizacionNombre}}</td>
+            <td><a href="/galgos/single/{{id}}" class = "btn btn-primary">ver mas<i class="fas fa-eye"></i></a></td>
+
+        </tr>
+            {{/each}}
+    </table>
+
+      </div>
+    </div>
+  </div>
+</div>
