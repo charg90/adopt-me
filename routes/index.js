@@ -1,9 +1,13 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
+const { getAll, getSingle } = require("../models/galgos");
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+const get = async (req, res) => {
+  const galgos = await getAll();
+  console.log(galgos);
+  res.render("index", { galgos });
+};
+
+router.get("/", get);
 
 module.exports = router;

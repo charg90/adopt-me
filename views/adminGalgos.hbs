@@ -1,31 +1,42 @@
-<div>
+<body class="bg-dark">
   <div class="container-fluid" style="height:100vh">
-      
-    <table class="table">
-        <tr>
-            <th>#</th>
-            <th>nombre</th>
-            <th>edad</th>
-            <th>color</th>
-            <th>organizacion</th>
-            <th>-</th>
-        </tr>
-        {{#each galgos}}
-        <tr>
-            <td>{{id}}</td>
-            <td>{{nombre}}</td>
-            <td>{{edad}}</td>
-            <td>{{color}}</td>
-            <td>{{organizacionNombre}}</td>
-            <td><a href="/admin/galgos/update/{{id}}">editar</a></td>
-            <td><a href="/admin/galgos/delete/{{id}}">eliminar</a></td>
+    <div class="row">
+      <a
+        href="/admin/galgos/create"
+        class="btn btn-block button btn-dark"
+        style="color:#C821E5 !important"
+      >agregar</a>
 
-        </tr>
-            {{/each}}
-            
-    </table>
-    <a href="/admin/galgos/create" class="btn btn-block button btn-primary">agregar</a>
-      </div>
+      {{#each galgos}}
+        <div class="col-4 d-flex justify-content-center">
+
+          <div class="card mt-4" style="width: 18rem;">
+            <img
+              class="card-img-top"
+              src="/images/galgos/{{uuid}}"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h5 class="card-title text-center">{{nombre}}</h5>
+              <p class="card-text text-center">edad:{{edad}}</p>
+              <p class="card-text text-center">color:{{color}}</p>
+              <p class="card-text text-center">descripcion:{{descripcion}}</p>
+              <p
+                class="card-text text-center"
+              >organizacion:{{organizacionNombre}}</p>
+              <a
+                href="/admin/galgos/update/{{id}}"
+                class="btn btn-primary d-flex justify-content-center"
+              >editar<i class="fas fa-edit"></i></a>
+              <a
+                href="/admin/galgos/delete/{{id}}"
+                class="btn btn-danger d-flex justify-content-center mt-2"
+              >eliminar<i class="fas fa-trash-alt"></i></a>
+            </div>
+
+          </div>
+        </div>
+      {{/each}}
     </div>
   </div>
-</div>
+</body>

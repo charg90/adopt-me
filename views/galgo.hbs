@@ -1,18 +1,46 @@
-<div class="container-fluid h-100" style="height: 100vh">
-  <div class="row justify-content-center align-items-center">
+<body class="bg-dark">
+<nav class="navbar navbar-expand-lg navbar-light bg-dark" >
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="/index" style="color:#C821E5 !important">ADOPT ME</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                      <li class="nav-item"><a class="nav-link active" aria-current="page" href="/login" style="color:#C821E5 !important">Iniciar session</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/registro" style="color:#C821E5 !important">Registro</a></li>
+                        
+                        <li class="nav-item"><a class="nav-link" href="/registro" style="color:#C821E5 !important">Registro</a></li>
+                        
+                        
+                    
+                </div>
+            </div>
+        </nav>
+<div>
+
+
+<div class="container-fluid h-100 d-flex" style="height: 100vh">
+  <div class="row d-flex justify-content-center align-items-center">
     <div class="col-4">
       <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">{{galgo.nombre}}</h5>
-          <p class="card-text">{{galgo.edad}}</p>
-          <p class="card-text">{{galgo.color}}</p>
-          <p class="card-text">{{nombreOrganizacion}}</p>
-          <p class="card-text">{{galgo.descripcion}}</p>
-          <a href="/galgos" class="btn btn-block btn-primary">volver</a>
-          <a href="/galgos" class="btn btn-block btn-success">adoptar</a>
+        <img
+          class="card-img-top"
+          src="/images/galgos/{{galgo.uuid}}"
+          alt="Card image cap"
+        />
+
+        <div class="card-body" style="color:#C821E5 !important">
+          <h5 class="card-title" style="color:#C821E5 !important">{{galgo.nombre}}</h5>
+          <p class="card-text" style="color:#C821E5 !important" >{{galgo.edad}}</p>
+          <p class="card-text" style="color:#C821E5 !important">{{galgo.color}}</p>
+          <p class="card-text" style="color:#C821E5 !important">{{nombreOrganizacion}}</p>
+          <p class="card-text" style="color:#C821E5 !important">{{galgo.descripcion}}</p>
+          <a href="/galgos" class="btn btn-block btn-dark" style="color:#C821E5 !important"  >volver</a>
 
         </div>
       </div>
     </div>
   </div>
 </div>
+
+</div>
+</body>

@@ -2,9 +2,18 @@ const express = require("express");
 const router = express.Router();
 const model = require("./../../models/galgos");
 const modelOrganizacion = require("./../../models/organizacion");
+const multer = require("multer");
+const config = { dest: "./public/tmp" };
+const upload = multer(config);
+const service = require("./../../services/galgos");
+const {
+  validateGalgo,
+  validateUpdateGalgo,
+} = require("./../../middlewares/galgos");
 
 const get = async (req, res) => {
   const galgos = await model.getAll();
+  console.log(galgos);
   res.render("adminGalgos", { galgos });
 };
 
@@ -16,8 +25,8 @@ const sCreate = async (req, res) => {
 
 const create = async (req, res) => {
   const galgo = req.body;
-  console.log(galgo);
-  const insertId = await model.create(galgo);
+  const idImg = await service.createGalgo(req.body, req.file);
+
   res.redirect("/admin/galgos");
 };
 
@@ -30,26 +39,26 @@ const sUpdate = async (req, res) => {
   res.render("updateGalgo", { galgo, organizacion });
 };
 const update = async (req, res) => {
-  const { id } = req.params;
-  const galgo = req.body;
-  const { insertId } = await model.update(id, galgo);
-  console.log(insertId);
-
+  const idImg = await service.updateGalgo(req.params.id, req.body, req.file);
   res.redirect("/admin/galgos");
 };
 
 const del = async (req, res) => {
   const { id } = req.params;
-  const { insertId } = await model.del(id);
-  console.log(id);
-  console.log(insertId);
+  const msgGalgo = await model.del(id);
+  const delImg = await model.delImg(id);
   res.redirect("/admin/galgos");
 };
 
 router.get("/", get);
 router.get("/create", sCreate);
-router.post("/create", create);
+router.post("/create", upload.single("imagen"), create);
 router.get("/update/:id", sUpdate);
-router.post("/update/:id", update);
-router.post("/delete/:id", del);
+router.post(
+  "/update/:id",
+  validateUpdateGalgo,
+  upload.single("imagen"),
+  update
+);
+router.get("/delete/:id", del);
 module.exports = router;

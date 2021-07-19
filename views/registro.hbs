@@ -1,12 +1,26 @@
-<div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-light bg-dark" >
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="/index" style="color:#C821E5 !important">ADOPT ME</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        
+                        <li class="nav-item"><a class="nav-link" href="/registro" style="color:#C821E5 !important">Registro</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/galgos" style="color:#C821E5 !important">Galgos</a></li>
+                        
+                    
+                </div>
+            </div>
+        </nav>
+<div class="container-fluid bg-dark">
   <div
     class="row justify-content-center align-items-center"
     style="height : 100vh"
   >
 
-    <form method="POST" action="/registro/create">
+    <form method="POST" action="/registro">
       <div class="form-group">
-        <label for="Username">Username:</label>
+        <label for="Username" style="color:#C821E5 !important">Username:</label>
         <input
           type="text"
           class="form-control"
@@ -16,7 +30,7 @@
         />
       </div>
       <div class="form-group">
-        <label for="pass">Pass:</label>
+        <label for="pass" style="color:#C821E5 !important">Pass:</label>
         <input
           type="password"
           class="form-control"
@@ -26,7 +40,7 @@
         />
       </div>
       <div class="form-group">
-        <label for="telefono">Telefono:</label>
+        <label for="telefono" style="color:#C821E5 !important">Telefono:</label>
         <input
           type="number"
           class="form-control"
@@ -36,7 +50,7 @@
         />
       </div>
       <div class="form-group">
-        <label for="mail">Email:</label>
+        <label for="mail" style="color:#C821E5 !important">Email:</label>
         <input
           type="email"
           class="form-control"
@@ -44,14 +58,16 @@
           name="mail"
           placeholder="name@example.com"
         />
-        <div class="d-grid gap-2">
+        <div class="d-grid gap-2" style="color: black !important;">
           <button
             type="submit"
-            class="btn btn-block btn-primary mt-2"
+            class="btn btn-block btn-primary mt-2 color"
+            style="color: black !important; background-color:#C821E5"
           >registrate</button>
 
         </div>
       </div>
+      <p class="text-danger">{{message}}</p>
 
     </form>
 

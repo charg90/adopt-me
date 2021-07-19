@@ -1,0 +1,56 @@
+<body class="bg-dark">
+  <div
+    class="row justify-content-center align-items-center"
+    style="height : 100vh"
+  >
+
+    <form method="POST" action="/admin/users/update/{{user.id}}">
+      <div class="form-group">
+        <label for="nombre" style="color:#C821E5 !important">Nombre:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          name="username"
+          
+          value="{{user.username}}"
+        />
+      </div>
+      <div class="form-group">
+        <label for="edad" style="color:#C821E5 !important">Telefono:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="telefono"
+          name="telefono"
+          
+          value="{{user.telefono}}"
+        />
+      </div>
+      <div class="form-group">
+        <label for="descripcion " style="color:#C821E5 !important">mail:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="mail"
+          name="mail"
+          value="{{user.mail}}"
+        />
+      </div>
+
+        <div class="d-grid gap-2">
+          <button
+            type="submit"
+            class="btn btn-block btn-primary mt-2"
+          >editar</button>
+
+        </div>
+<p class="text-danger">{{message}}</p>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+</body>

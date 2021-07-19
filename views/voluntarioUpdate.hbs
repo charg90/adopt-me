@@ -1,0 +1,72 @@
+<div class="container">
+  <div
+    class="row justify-content-center align-items-center"
+    style="height : 100vh"
+  >
+
+    <form
+      method="POST"
+      action="/admin/voluntarios/update/{{voluntario.id}}"
+      enctype="multipart/form-data"
+    >
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nombre"
+          name="nombre"
+          placeholder="nombre"
+          value="{{voluntario.nombre}}"
+        />
+      </div>
+      <div class="form-group">
+        <label for="Apellido">Apellido:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="apellido"
+          name="apellido"
+          placeholder="apellido"
+          value="{{voluntario.apellido}}"
+        />
+      </div>
+      <div class="form-group">
+        <label for="direccion">Direccion:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="direccion"
+          name="direccion"
+          placeholder="direccion"
+          value="{{voluntario.direccion}}"
+        />
+      </div>
+      <div class="form-group">
+        <label for="mail">Mail:</label>
+        <input
+          type="mail"
+          class="form-control"
+          id="mail"
+          name="mail"
+          placeholder="mail"
+          value="{{voluntario.mail}}"
+        />
+        <div class="form-group">
+          <label for="mail">modificar foto</label>
+          <input type="file" id="imagen" name="imagen" placeholder="foto" />
+        </div>
+
+        <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-block btn-primary mt-2">modificar
+            Voluntario</button>
+
+        </div>
+
+      </div>
+
+    </form>
+
+  </div>
+
+</div>

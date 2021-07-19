@@ -1,8 +1,8 @@
 const { v4: uuid } = require("uuid");
 const fs = require("fs");
-
 const extensionesPermitidas = ["png", "jpg", "jpeg"];
 
+//utils encargada de filtrar imagenes y transforma imagenes bytes a un archivo legible
 const saveFile = (
   { mimetype, path },
   allowE,
@@ -24,5 +24,7 @@ const saveFile = (
 };
 
 const imgFileVoluntarios = (file) => saveFile(file, extensionesPermitidas);
+const imgFileGalgos = (file) =>
+  saveFile(file, extensionesPermitidas, "./public/images/galgos");
 
-module.exports = { imgFileVoluntarios };
+module.exports = { imgFileVoluntarios, imgFileGalgos };

@@ -4,6 +4,7 @@ const model = require("./../models/usuarios");
 const sha1 = require("sha1");
 const { v4: uuid } = require("uuid");
 const { send } = require("./../services/mail");
+const { validateRegister } = require("./../middlewares/usuarios");
 
 const register = (req, res) => {
   res.render("registro");
@@ -24,8 +25,6 @@ const create = async (req, res) => {
 
   const agregado = await model.create(usuarioFinal);
 
-  console.log(agregado);
-
   send({
     mail: usuarioFinal.mail,
     cuerpo: `<h1> Gracias por registrarte en Adopt Me</h1>
@@ -41,6 +40,6 @@ const verify = async (req, res) => {
 };
 
 router.get("/", register);
-router.post("/create", create);
+router.post("/", validateRegister, create);
 router.get("/verify/:uid", verify);
 module.exports = router;

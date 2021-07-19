@@ -1,23 +1,24 @@
+<body class="bg-dark">
 <div>
   <div class="container-fluid" style="height:100vh">
       
     <table class="table">
         <tr>
-            <th>#</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Direccion</th>
-            <th>mail</th>
-            <th>foto</th>
+            <th style="color:#C821E5 !important">#</th>
+            <th style="color:#C821E5 !important">Nombre</th>
+            <th style="color:#C821E5 !important">Apellido</th>
+            <th style="color:#C821E5 !important">Direccion</th>
+            <th style="color:#C821E5 !important">mail</th>
+            <th style="color:#C821E5 !important">foto</th>
         </tr>
         {{#each voluntarios}}
         <tr>
-            <td>{{id}}</td>
-            <td>{{nombre}}</td>
-            <td>{{apellido}}</td>
-            <td>{{direccion}}</td>
-            <td>{{mail}}</td>
-            <td><img src="/images/{{uuid}}" alt = "no hay imagen" style = "height :40px"></td>
+            <td style="color:#C821E5 !important">{{id}}</td>
+            <td style="color:#C821E5 !important">{{nombre}}</td>
+            <td style="color:#C821E5 !important">{{apellido}}</td>
+            <td style="color:#C821E5 !important">{{direccion}}</td>
+            <td style="color:#C821E5 !important">{{mail}}</td>
+            <td ><img src="/images/{{uuid}}" alt = "no hay imagen" style = "height :40px"></td>
             <td><a href="/admin/voluntarios/update/{{id}}">editar</a></td>
             <td><a href="/admin/voluntarios/delete/{{id}}">eliminar</a></td>
 
@@ -25,8 +26,9 @@
             {{/each}}
             
     </table>
-    <a href="/admin/voluntarios/create" class="btn btn-block button btn-primary">agregar</a>
+    <a href="/admin/voluntarios/create" class="btn btn-block button btn-primary" style="color:#C821E5 !important">agregar</a>
       </div>
     </div>
   </div>
 </div>
+</body>

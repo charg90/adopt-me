@@ -1,0 +1,38 @@
+<body class="bg-dark">
+  <div class="container-fluid" style="height:100vh">
+    <div class="row">
+      {{#each usuarios}}
+        <div class="col-4 d-flex justify-content-center">
+
+          <div class="card mt-4" style="width: 18rem;">
+
+            <div class="card-body">
+              <h5
+                class="card-title text-center"
+                style="color:#C821E5 !important"
+              >{{username}}</h5>
+              <p
+                class="card-text text-center"
+                style="color:#C821E5 !important"
+              >telefono:{{telefono}}</p>
+              <p
+                class="card-text text-center"
+                style="color:#C821E5 !important"
+              >mail:{{mail}}</p>
+
+              <a
+                href="/admin/users/update/{{id}}"
+                class="btn btn-primary d-flex justify-content-center"
+              >editar<i class="fas fa-edit ml-2 mt-1"></i></a>
+              <a
+                href="/admin/users/delete/{{id}}"
+                class="btn btn-danger d-flex justify-content-center mt-2"
+              >eliminar<i class="fas fa-trash-alt ml-2 mt-1"></i></a>
+            </div>
+
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</body>
